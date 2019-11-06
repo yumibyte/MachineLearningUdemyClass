@@ -24,3 +24,15 @@ test_set = subset(dataset, split == FALSE)
 # Fitting Multiple Linear Regression to the Training Set
 regressor = lm(formula = Profit ~ .,
               data = training_set)
+
+# Predicting the Test set result
+y_pred = predict(regressor, newdata = test_set)
+
+# Building the potimal model using Backward elimination
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State,
+               data = dataset)
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend,
+               data = dataset)
+regressor = lm(formula = Profit ~ R.D.Spend + Administration,
+               data = dataset)
+summary(regressor)
