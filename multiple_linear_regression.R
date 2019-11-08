@@ -33,6 +33,8 @@ regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend +
                data = dataset)
 regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend,
                data = dataset)
-regressor = lm(formula = Profit ~ R.D.Spend + Administration,
+regressor = lm(formula = Profit ~ R.D.Spend + Marketing.Spend,
+               data = dataset)
+regressor = lm(formula = Profit ~ R.D.Spend,
                data = dataset)
 summary(regressor)
